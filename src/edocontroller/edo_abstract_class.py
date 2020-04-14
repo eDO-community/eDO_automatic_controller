@@ -26,16 +26,6 @@ class EdoAbstractClass:
     def go_to_joint(self, joint1, joint2, joint3, joint4, joint5, joint6):
         raise NotImplementedError("go_to_joint should be implemented")
 
-    def _correct_pose_goal(self, pose_goal_geometry):
-        """The length of the gripper is not taken into account in moveit, so we need to correct the value"""
-        end_effector_correction_when_reset = np.quaternion(0, 0, 0, -DIST_END_EFFECTOR_GRIPPER_CLOSED)
-        rotation_end_effector = pose_goal_geometry.orientation
-        end_effector_correction = rotation_end_effector * end_effector_correction_when_reset / rotation_end_effector
-        position_corrected = pose_goal_geometry.position + end_effector_correction
-
-        pose_goal_geometry_corrected = GeometryPose(position_corrected, pose_goal_geometry.orientation)
-        return pose_goal_geometry_corrected
-
     def go_to_pose_goal(self, pose_goal_geometry):
         """pose_goal type should be a GeometryPose object """
         raise NotImplementedError("go_to_pose_goal should be implemented")

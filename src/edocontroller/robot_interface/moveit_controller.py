@@ -1,20 +1,14 @@
 #!/usr/bin/env python
 
 import sys
-from time import sleep
-from math import pi, cos, sin
 
 import rospy
-import numpy as np
 import moveit_commander
+
 from std_msgs.msg import Bool
-from  moveit_msgs.msg import OrientationConstraint, Constraints
-from geometry_msgs.msg import Quaternion
-from geometry_msgs.msg import Point
 from geometry_msgs.msg import Pose
 
 from geometry_representation import GeometryParser, GeometryPose
-from geometry_representation import VectorQuaternion
 
 from edocontroller.edo_abstract_class import EdoAbstractClass
 
@@ -78,20 +72,22 @@ class MoveitController(EdoAbstractClass):
 
         return pose_goal_geometry
 
-    def _convert_pose_to_moveit_env(self, pose_goal_geometry):
-        """Before feeding moveit with the pose, some modifications need to be done
-        For instance, the Geometry pose must be transformed into a simple pose"""
-        # The length of the gripper is not taken into account in moveit, so we need to correct the value
-        pose_goal_geometry_corrected = self._correct_pose_goal(pose_goal_geometry)
-        return pose_goal_geometry_corrected
-
-    def go_to_pose_goal(self, pose_goal_geometry):
-        """pose_goal_geometry type should be a GeometryPose object, where the coordinate and rotation are given
+    def go_to_pose_goal(self, pose_goal):
+        """pose_goal_geometry type should be a GeometryPose object or a Pose object, where the coordinate and rotation are given
         in the fiducial coordinate system"""
 
-        pose_goal = self._convert_pose_to_moveit_env(pose_goal_geometry)
+        pose_goal_geometry = pose_goal
+        if isinstance(pose_goal, Pose):
+            pose_goal_geometry = GeometryParser.geometry_pose_from_pose(pose_goal)
+        else:
+            if not isinstance(pose_goal, GeometryPose):
+                raise ValueError("argument should be of type GeometryPose or Pose")
 
-        self._go_to_moveit_pose_goal(pose_goal)
+        pose_goal_geometry.orientation = pose_goal_geometry.orientation.normalized()
+        pose_goal_geometry = self._correct_pose_goal(pose_goal_geometry)
+        pose_goal_message = GeometryParser.pose_from_geometry_pose(pose_goal_geometry)
+
+        self._go_to_moveit_pose_goal(pose_goal_message)
 
     def _prevent_collision_with_ground(self, pose_goal_in_moveit):
         # TODO : This function depends on the environment and of the END_EFFECTOR.

@@ -1,20 +1,7 @@
 #!/usr/bin/env python
 
-import sys
-from time import sleep
-from math import pi, cos, sin
-
 import rospy
-import numpy as np
-import moveit_commander
 from std_msgs.msg import Float32
-from  moveit_msgs.msg import OrientationConstraint, Constraints
-from geometry_msgs.msg import Quaternion
-from geometry_msgs.msg import Point
-from geometry_msgs.msg import Pose
-
-from geometry_representation import GeometryParser, GeometryPose
-from geometry_representation import VectorQuaternion
 
 from edocontroller.robot_interface.moveit_controller import MoveitController
 
