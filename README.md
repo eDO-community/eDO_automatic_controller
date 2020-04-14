@@ -11,7 +11,6 @@ Your workspace should contain the following packages if you use the simulation
 - edo_gazebo which can be found on Pro repositories
 - edo_description which can be found on Pro repositories
 - geometry_representation which can be found on my repositories
--
 
 ## How to use it ?
 
