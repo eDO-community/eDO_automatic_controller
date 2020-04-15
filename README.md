@@ -23,7 +23,7 @@ Your workspace should contain the following packages
 | repository | repository url |
 | - | - |
 | edo_gripper | https://github.com/Pro/edo_gripper |
-| edo_gripper_moveit | https://github.com/Pro/edo_gripper_moveit |
+| edo_gripper_moveit | https://github.com/Pro/edo_gripper_moveit |
 | edo_gazebo | https://github.com/Pro/edo_gazebo |
 | edo_description | https://github.com/Pro/eDO_description |
 | geometry_representation | https://github.com/Bracewind/geometry_representation 
@@ -35,7 +35,7 @@ Your workspace should contain the following packages
 | repository | repository url |
 | - | - |
 | edo_control/edo_control_v3 | https://github.com/ymollard/eDO_control or https://github.com/Bracewind/eDO_control_v3 |
-| edo_moveit | https://github.com/Pro/eDO_moveit |
+| edo_moveit | https://github.com/Pro/eDO_moveit |
 | edo_core_msgs | https://github.com/Comau/eDO_core_msgs |
 | geometry_representation | https://github.com/Bracewind/geometry_representation  |
 
