@@ -26,10 +26,12 @@ Your workspace should contain the following packages if you use the simulation
 
 Clone the directory into your catkin directory.
 Your workspace should contain the following packages if you use the simulation
-- edo_control/edo_control_v3 which can be found on YMollard/Bracewind repositories
-- edo_moveit which can be found on Pro repositories
-- edo_core_msgs which can be found on Comau repositories
-- geometry_representation which can be found on my repositories
+| repository | repository url |
+| - | - |
+| edo_control/edo_control_v3 | https://github.com/ymollard/eDO_control or https://github.com/Bracewind/eDO_control_v3 |
+| edo_moveit | https://github.com/Pro/eDO_moveit |
+| edo_core_msgs | https://github.com/Comau/eDO_core_msgs |
+| geometry_representation | https://github.com/Bracewind/geometry_representation  |
 
 To connect to the real robot, use the description given in the edo_control repository
 
