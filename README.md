@@ -13,7 +13,7 @@ This package uses the python packages :
 ### Simulation
 
 Clone the directory into your catkin directory.
-Your workspace should contain the following packages if you use the simulation
+Your workspace should contain the following packages
 | repository | repository url |
 | - | - |
 | edo_gripper | https://github.com/Pro/edo_gripper |
@@ -25,7 +25,7 @@ Your workspace should contain the following packages if you use the simulation
 ### Real robot
 
 Clone the directory into your catkin directory.
-Your workspace should contain the following packages if you use the simulation
+Your workspace should contain the following packages
 | repository | repository url |
 | - | - |
 | edo_control/edo_control_v3 | https://github.com/ymollard/eDO_control or https://github.com/Bracewind/eDO_control_v3 |
@@ -46,7 +46,7 @@ To connect to the real robot, use the description given in the edo_control repos
 ### Real robot
 
 - Calibrate your eDO using the application
-- Configure your terminal (see the file init_connexion.bash for more details)
+- Configure your terminal (see [this file](bash_configuration.sh) for more details)
 - launch the file init_connexion.launch
 - wait that everything has started
 - launch your code
