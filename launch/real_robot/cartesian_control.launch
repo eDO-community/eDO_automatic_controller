@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node name="example" pkg="edo_automatic_controller" type="cartesian_control.py" output="screen"/>
+
+</launch>

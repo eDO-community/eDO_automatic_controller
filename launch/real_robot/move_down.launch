@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node name="example" pkg="edo_automatic_controller" type="move_down.py" output="screen"/>
+
+</launch>
