@@ -4,6 +4,12 @@ This package is an upper layer allowing to easily control the robot using Moveit
 
 ## How to install it ?
 
+### ROS dependencies
+
+This package does not need more dependencies than the packages [edo_control](https://github.com/ymollard/eDO_control) or [edo_gazebo](https://github.com/Pro/edo_gazebo)
+
+For the previous packages, at least Moveit is necessary.
+
 ### Python dependencies
 
 This package uses the python packages :
