@@ -59,6 +59,6 @@ The code written should only use the function given by the EdoAbstractClass.
 - The class MoveitSimulator is used for controlling the robot with the simulator
 - The class MoveitController is used for controlling the real robot
 
-Code examples on how to write a simple program using the controllers are given in the folder examples
+Code examples on how to write a simple program using the controllers are given in the [example](src/example) folder 
 
 
