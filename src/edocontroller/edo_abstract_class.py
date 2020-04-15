@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 
-from geometry_representation import GeometryPose, GeometryParser
-from env_representation import MapperEnvMoveit, DIST_END_EFFECTOR_GRIPPER_CLOSED
-
-
 class EdoAbstractClass:
     """This class is an abstract class of the edo robot, it allows to test some features without starting the robot
     using a dummy, while not changing any other class
