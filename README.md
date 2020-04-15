@@ -59,7 +59,7 @@ To connect to the real robot, use the description given in the edo_control repos
 
 ## How to write your own code ?
 
-The code written should only use the function given by the [EdoAbstractClass](https://github.com/Bracewind/eDO_automatic_controller/blob/b3949376dedb331be9029d6bc70fc3a187d9a434/src/edocontroller/edo_abstract_class.py#L7).
+The code written should only use the functions given by the [EdoAbstractClass](https://github.com/Bracewind/eDO_automatic_controller/blob/b3949376dedb331be9029d6bc70fc3a187d9a434/src/edocontroller/edo_abstract_class.py#L7).
 
 - The class EdoDummy is a stub used to test programs using the EdoAbstractClass
 - The class MoveitSimulator is used for controlling the robot with the simulator
