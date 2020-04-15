@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>	
 
-	<include file="$(find cobot_world)/launch/edo_gripper_working.launch">
+	<include file="$(find edo_gazebo)/launch/edo_gripper.launch">
 	</include>
 
 	<include file="$(find edo_gripper_moveit)/launch/edo_moveit_planning_execution.launch" ns="edo" >
