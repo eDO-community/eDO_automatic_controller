@@ -14,11 +14,13 @@ This package uses the python packages :
 
 Clone the directory into your catkin directory.
 Your workspace should contain the following packages if you use the simulation
-- edo_gripper which can be found on Pro repositories
-- edo_gripper_moveit which can be found on Pro repositories
-- edo_gazebo which can be found on Pro repositories
-- edo_description which can be found on Pro repositories
-- geometry_representation which can be found on my repositories
+| repository | repository url |
+| - | - |
+| edo_gripper | https://github.com/Pro/edo_gripper |
+| edo_gripper_moveit | https://github.com/Pro/edo_gripper_moveit |
+| edo_gazebo | https://github.com/Pro/edo_gazebo |
+| edo_description | https://github.com/Pro/eDO_description |
+| geometry_representation | https://github.com/Bracewind/geometry_representation 
 
 ### Real robot
 
