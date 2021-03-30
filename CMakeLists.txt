@@ -6,7 +6,6 @@ find_package(catkin REQUIRED
   rospy
   std_msgs
   geometry_msgs
-  geometry_representation
 )
 
 catkin_python_setup()
@@ -21,7 +20,6 @@ catkin_package(
   rospy
   std_msgs
   geometry_msgs
-  geometry_representation
 
 )
 

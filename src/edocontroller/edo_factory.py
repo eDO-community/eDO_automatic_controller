@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from edocontroller.robot_interface.edo_dummy import EdoDummy
 from edocontroller.robot_interface.moveit_controller import MoveitController

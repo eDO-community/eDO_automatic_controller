@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 class EdoAbstractClass:
     """This class is an abstract class of the edo robot, it allows to test some features without starting the robot

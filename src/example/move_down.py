@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from math import pi
 
@@ -8,7 +8,7 @@ from geometry_msgs.msg import Pose, Quaternion, Point
 from edocontroller import EdoFactory, SIMULATION
 
 if __name__ == "__main__":
-    rospy.init_node("simple joint control", anonymous=True)
+    rospy.init_node("simple_joint_control", anonymous=True)
 
     # initialize the controller wanted, here the one used along with the simulation
     controller = EdoFactory().create_robot_model(SIMULATION)
