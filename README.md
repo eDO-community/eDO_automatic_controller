@@ -2,7 +2,58 @@
 
 This package is an upper layer allowing to easily control the robot using Moveit.
 
-## How to install it ?
+## Installing using docker (simulation only)
+
+The catkin repository will be created in the container, so do not clone this folder inside your catkin repo
+
+Before doing anything, you must add execution permission to the xserver to run GUI application in docker
+In your terminal run
+`xhost +`
+
+In the .docker folder, execute the command line
+`docker-compose build`
+
+Then execute
+`docker-compose up`
+
+The docker instance is up and a name <the_container_name> has been given to it. You should see `Attaching to <the_container_name> in your terminal.`
+For instance
+`Attaching to docker_edo_gazebo_1 in your terminal.`
+
+now you can access open a new terminal inside the container using
+`docker exec -it <the_container_name> /bin/bash`
+Let's suppose <the_container_name> is docker_edo_gazebo_1
+Then the command to enter is
+`docker exec -it docker_edo_gazebo_1 /bin/bash`
+
+Open 2 terminals using
+`docker exec -it <the_container_name> /bin/bash`
+
+In the first terminal run the make_workspace.sh script. This file will just build the catkin repository using catkin build and add to your .bashrc what you need
+If this does not work, make sure you set the permissions to run the script
+`./edo_automatic_simulator/make_workspace.sh`
+
+run the command
+`roslaunch edo_automatic_simulation init_simulation.launch`
+This will launch the gazebo simulation and moveit server made by Stefan Profanter
+
+In the second, you can launch your own script to control the robot
+For instance, enter the command
+`rosrun edo_automatic_simulation move_down.py`
+
+Summary :
+Terminal 1
+`xhost +`
+`docker-compose build`
+`docker-compose up`
+Terminal 2
+`docker exec -it <the_container_name> /bin/bash`
+`./edo_automatic_simulator/make_workspace.sh`
+`roslaunch edo_automatic_simulation init_simulation.launch`
+Terminal 3
+`rosrun edo_automatic_simulation move_down.py`
+
+## Installing on your workstation
 
 ### ROS dependencies
 
@@ -13,6 +64,7 @@ For the previous packages, at least Moveit is necessary.
 ### Python dependencies
 
 This package uses the python packages :
+
 - numpy
 - numpy-quaternion
 
@@ -26,7 +78,6 @@ Your workspace should contain the following packages
 | edo_gripper_moveit | https://github.com/Pro/edo_gripper_moveit |
 | edo_gazebo | https://github.com/Pro/edo_gazebo |
 | edo_description | https://github.com/Pro/eDO_description |
-| geometry_representation | https://github.com/Bracewind/geometry_representation 
 
 ### Real robot
 
@@ -37,7 +88,6 @@ Your workspace should contain the following packages
 | edo_control/edo_control_v3 | https://github.com/ymollard/eDO_control or https://github.com/Bracewind/eDO_control_v3 |
 | edo_moveit | https://github.com/Pro/eDO_moveit |
 | edo_core_msgs | https://github.com/Comau/eDO_core_msgs |
-| geometry_representation | https://github.com/Bracewind/geometry_representation  |
 
 To connect to the real robot, use the description given in the edo_control repository
 
@@ -65,6 +115,4 @@ The code written should only use the functions given by the [EdoAbstractClass](h
 - The class MoveitSimulator is used for controlling the robot with the simulator
 - The class MoveitController is used for controlling the real robot
 
-Code examples on how to write a simple program using the controllers are given in the [example](src/example) folder 
-
-
+Code examples on how to write a simple program using the controllers are given in the [example](src/example) folder
