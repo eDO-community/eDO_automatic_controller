@@ -7,51 +7,50 @@ This package is an upper layer allowing to easily control the robot using Moveit
 The catkin repository will be created in the container, so do not clone this folder inside your catkin repo
 
 Before doing anything, you must add execution permission to the xserver to run GUI application in docker
-In your terminal run
+In your terminal run <br />
 `xhost +`
 
-In the .docker folder, execute the command line
+In the .docker folder, execute the command line <br />
 `docker-compose build`
 
-Then execute
+Then execute <br />
 `docker-compose up`
 
-The docker instance is up and a name <the_container_name> has been given to it. You should see `Attaching to <the_container_name> in your terminal.`
-For instance
+The docker instance is up and a name <the_container_name> has been given to it. You should see <br />
+`Attaching to <the_container_name> in your terminal.` <br />
+For instance  <br />
 `Attaching to docker_edo_gazebo_1 in your terminal.`
 
-now you can access open a new terminal inside the container using
-`docker exec -it <the_container_name> /bin/bash`
-Let's suppose <the_container_name> is docker_edo_gazebo_1
-Then the command to enter is
-`docker exec -it docker_edo_gazebo_1 /bin/bash`
+now you can access open a new terminal inside the container using <br />
+`docker exec -it <the_container_name> /bin/bash` <br />
+Let's suppose <the_container_name> is docker_edo_gazebo_1. Then the command to enter is <br />
+`docker exec -it docker_edo_gazebo_1 /bin/bash` 
 
-Open 2 terminals using
+Open 2 terminals using <br />
 `docker exec -it <the_container_name> /bin/bash`
 
 In the first terminal run the make_workspace.sh script. This file will just build the catkin repository using catkin build and add to your .bashrc what you need
-If this does not work, make sure you set the permissions to run the script
+If this does not work, make sure you set the permissions to run the script <br />
 `./edo_automatic_simulator/make_workspace.sh`
 
-run the command
+run the command <br />
 `roslaunch edo_automatic_simulation init_simulation.launch`
 This will launch the gazebo simulation and moveit server made by Stefan Profanter
 
-In the second, you can launch your own script to control the robot
-For instance, enter the command
+In the second, you can launch your own script to control the robot. For instance, enter the command <br />
 `rosrun edo_automatic_simulation move_down.py`
 
 Summary :
-Terminal 1
-`xhost +`
-`docker-compose build`
-`docker-compose up`
-Terminal 2
-`docker exec -it <the_container_name> /bin/bash`
-`./edo_automatic_simulator/make_workspace.sh`
-`roslaunch edo_automatic_simulation init_simulation.launch`
-Terminal 3
-`rosrun edo_automatic_simulation move_down.py`
+Terminal 1 <br />
+`xhost +` <br />
+`docker-compose build` <br />
+`docker-compose up` <br />
+Terminal 2 <br />
+`docker exec -it <the_container_name> /bin/bash` <br />
+`./edo_automatic_simulator/make_workspace.sh` <br />
+`roslaunch edo_automatic_simulation init_simulation.launch` <br />
+Terminal 3 <br /> 
+`rosrun edo_automatic_simulation move_down.py`<br />
 
 ## Installing on your workstation
 
